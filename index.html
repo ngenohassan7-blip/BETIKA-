@@ -624,18 +624,31 @@ function toggleMoreMenu() {
 function openRegisterPage() {
     document.getElementById('registerPage').style.display = 'block';
 }
-
 function closeRegisterPage() {
     document.getElementById('registerPage').style.display = 'none';
 }
-
 function handleRegisterSubmit(event) {
     event.preventDefault();
-    
-    // 1. Close the register page overlay
     closeRegisterPage();
-    
-    // 2. Find the top right header navigation and change it to Deposit
+    var navRight = document.querySelector('.nav-right');
+    if (navRight) {
+        navRight.innerHTML = `
+            <button style="background-color: #ffcc00; color: #000; border: none; padding: 6px 14px; border-radius: 4px; font-weight: bold; cursor: pointer; margin-right: 8px;">Deposit</button>
+            <button class="search-btn" style="background:none; border:none; color:#fff; font-size:16px; cursor:pointer;">🔍</button>
+            <button style="background:none; border:none; color:#fff; font-size:18px; cursor:pointer; margin-left: 10px;">🔔</button>
+        `;
+    }
+}
+
+function openLoginPage() {
+    document.getElementById('loginPage').style.display = 'block';
+}
+function closeLoginPage() {
+    document.getElementById('loginPage').style.display = 'none';
+}
+function handleLoginSubmit(event) {
+    event.preventDefault();
+    closeLoginPage();
     var navRight = document.querySelector('.nav-right');
     if (navRight) {
         navRight.innerHTML = `
@@ -646,6 +659,7 @@ function handleRegisterSubmit(event) {
     }
 }
 </script>
+
 
         
 </body>
