@@ -375,3 +375,14 @@ body {
     background: transparent !important;
     background-color: transparent !important;
 }
+/* Sticky Header & Navigation */
+header, .top-nav, .sub-nav, .filters-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #121a24;
+}
+
+main.container {
+    padding-top: 10px;
+}
