@@ -361,3 +361,12 @@ body {
     margin-top: -14px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.4);
 }
+.promo-banner-img {
+    background-image: url('banner.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 95px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    }
