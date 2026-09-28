@@ -387,14 +387,22 @@ header, .top-nav, .sub-nav, .filters-bar {
     z-index: 1000;
     background-color: #121a24;
 }
-/* Remove card boxes to make matches flat and seamless */
-.match-card {
+/* Remove card boxes and inner backgrounds completely */
+.match-card, 
+.match-header-row, 
+.match-body, 
+.match-footer {
     background-color: transparent !important;
+    background: none !important;
     border: none !important;
+    box-shadow: none !important;
+}
+
+/* Add a clean separator line between match rows */
+.match-card {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
     border-radius: 0 !important;
     padding: 12px 16px !important;
     margin-bottom: 0 !important;
-    box-shadow: none !important;
-    }
+}
 
