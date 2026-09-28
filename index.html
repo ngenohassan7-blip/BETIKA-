@@ -712,9 +712,16 @@ function handleLoginSubmit(event) {
 }
 
 function openProfilePage() {
+    var savedPhone = localStorage.getItem('userPhone');
+    if (!savedPhone) {
+        alert('Please log in or register first to view your profile.');
+        openLoginPage();
+        return;
+    }
     updateProfileNumber();
     document.getElementById('profilePage').style.display = 'block';
 }
+
 function closeProfilePage() {
     document.getElementById('profilePage').style.display = 'none';
 }
