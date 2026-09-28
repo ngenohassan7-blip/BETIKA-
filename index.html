@@ -3,246 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Betika Virtual Clone</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <title>Betika</title>
+    <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
     <!-- Top Header -->
     <header class="navbar">
-        <div class="logo" style="color: #ffcc00; font-weight: bold; font-size: 20px;">Betika!</div>
-        <div class="wallet-container" style="display: flex; align-items: center; gap: 8px;">
-            <div class="wallet" style="font-size: 13px;">
-                <span>Bal: </span><strong id="user-balance">10,000</strong> <span style="color: #ffcc00;">V</span>
-            </div>
-            <button onclick="resetBalance()" style="background-color: #ffcc00; border: none; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 11px; cursor: pointer;">
-                + Top Up
-            </button>
+        <div class="nav-left">
+            <button class="menu-btn">☰</button>
+            <div class="logo">Betika<span class="logo-dot">!</span></div>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="login-link">Login</a>
+            <a href="#" class="register-btn">Register</a>
+            <button class="search-btn">🔍</button>
         </div>
     </header>
 
-    <!-- Complete Top Category Icons Scroll Bar -->
+    <!-- Top Category Scroll Bar with Exact Betika Vector Icons -->
     <nav class="categories-bar">
-        <div class="cat-item active">
-            <span class="cat-icon">⚽</span>
+        <!-- Soccer -->
+        <button class="cat-item active">
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm3.5-11.5L14 5.5l-2 1.5L10 5.5 8.5 8.5 10 10l-1.5 2L10 14l2-1.5 2 1.5 1.5-2L14 10z"/></svg>
+            </span>
             <span class="cat-label">Soccer</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🏆</span>
+        </button>
+
+        <!-- Ligi Bigi -->
+        <button class="cat-item">
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.4 4.94A6.012 6.012 0 0 0 11 16.9V19H8v2h8v-2h-3v-2.1a6.012 6.012 0 0 0 3.6-3.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8h2v3.82C5.84 11.4 5 10.3 5 9V8zm14 1c0 1.3-.84 2.4-2 2.82V8h2z"/></svg>
+            </span>
             <span class="cat-label">Ligi Bigi</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🎮</span>
+        </button>
+
+        <!-- Virtuals -->
+        <button class="cat-item has-badge">
+            <span class="badge">NEW</span>
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h18v8zM6 15h2v-2h2v-2H8V9H6v2H4v2h2z"/></svg>
+            </span>
             <span class="cat-label">Virtuals</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">✈️</span>
+        </button>
+
+        <!-- Aviator -->
+        <button class="cat-item">
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>
+            </span>
             <span class="cat-label">Aviator</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">❤️</span>
+        </button>
+
+        <!-- Crash Games -->
+        <button class="cat-item">
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+            </span>
             <span class="cat-label">Crash Games</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🎲</span>
+        </button>
+
+        <!-- Casino -->
+        <button class="cat-item">
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 10c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z"/></svg>
+            </span>
             <span class="cat-label">Casino</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">💰</span>
+        </button>
+
+        <!-- Jackpots -->
+        <button class="cat-item">
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.03-.42 1.98-1.07 2.75z"/></svg>
+            </span>
             <span class="cat-label">Jackpots</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">⚡</span>
+        </button>
+
+        <!-- Shikisha Bet -->
+        <button class="cat-item">
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.48 2.54l2.6 1.53C21.57 14.93 22 13.5 22 12c0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.05.5-9 4.77-9 9.95 0 5.52 4.48 10 10 10 2.21 0 4.24-.72 5.89-1.93l-2.52-1.49C14.39 18.72 13.23 19 12 19z"/></svg>
+            </span>
             <span class="cat-label">Shikisha Bet</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">📱</span>
+        </button>
+
+        <!-- Betika Fasta -->
+        <button class="cat-item">
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.47 2 11.99s4.47 9.99 9.99 9.99C17.52 22 22 17.52 22 11.99S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            </span>
             <span class="cat-label">Betika Fasta</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🎁</span>
+        </button>
+
+        <!-- Promotions -->
+        <button class="cat-item">
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.47 10 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.1 0-1.99.9-1.99 2L2 19c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z"/></svg>
+            </span>
             <span class="cat-label">Promotions</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🏓</span>
-            <span class="cat-label">Table Tennis</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🥊</span>
-            <span class="cat-label">Boxing</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">⚾</span>
-            <span class="cat-label">Baseball</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🏒</span>
-            <span class="cat-label">Ice Hockey</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🏈</span>
-            <span class="cat-label">American Football</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🏀</span>
-            <span class="cat-label">Basketball</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🤾</span>
-            <span class="cat-label">Handball</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🎾</span>
-            <span class="cat-label">Tennis</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🏉</span>
-            <span class="cat-label">Rugby</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🏏</span>
-            <span class="cat-label">Cricket</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🎮</span>
-            <span class="cat-label">ESport Honor</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🎯</span>
-            <span class="cat-label">Darts</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">⚽</span>
-            <span class="cat-label">Futsal</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🎮</span>
-            <span class="cat-label">Counter-Strike</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🎮</span>
-            <span class="cat-label">ESport Dota</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🏐</span>
-            <span class="cat-label">Volleyball</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">📺</span>
-            <span class="cat-label">Zoom Soccer</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">🎮</span>
-            <span class="cat-label">League of Legends</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">📥</span>
-            <span class="cat-label">Download App</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">⏱️</span>
-            <span class="cat-label">Livescore</span>
-        </div>
-        <div class="cat-item">
-            <span class="cat-icon">⋮</span>
+        </button>
+
+        <!-- More -->
+        <button class="cat-item">
+            <span class="cat-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            </span>
             <span class="cat-label">More</span>
-        </div>
+        </button>
     </nav>
 
-    <!-- Sub-menu Filters -->
+    <!-- Sub-menu Filters Bar -->
     <div class="sub-filters">
         <span class="active-tab">Highlights</span>
         <span>Upcoming</span>
+        <span>Countries</span>
+        <span>Zoom Soccer</span>
         <span>Jackpots</span>
     </div>
 
-    <!-- Main Content Area (Matches) -->
-    <main class="container" style="padding-bottom: 70px;">
-        
-        <!-- Match 1: Japan vs Venezuela -->
-        <div class="match-card">
-            <div class="match-info">
-                <span class="category">International • Friendly • 28/09, 13:25</span>
-                <h4>Japan vs Venezuela</h4>
-            </div>
-            <div class="odds-grid">
-                <button class="odd-btn" onclick="placeBet('Japan vs Venezuela (1)', 1.22)">
-                    <span class="label">1</span>
-                    <span class="value">1.22</span>
-                </button>
-                <button class="odd-btn" onclick="placeBet('Japan vs Venezuela (X)', 5.80)">
-                    <span class="label">X</span>
-                    <span class="value">5.80</span>
-                </button>
-                <button class="odd-btn" onclick="placeBet('Japan vs Venezuela (2)', 11.00)">
-                    <span class="label">2</span>
-                    <span class="value">11.00</span>
-                </button>
+    <!-- Dropdown Filters Toolbar -->
+    <div class="filter-toolbar">
+        <button class="filter-dropdown">⚙️ Filters ▾</button>
+        <button class="filter-dropdown">Today ▾</button>
+        <button class="filter-dropdown">Highlights ▾</button>
+        <button class="filter-dropdown">1×2 ▾</button>
+    </div>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        <div class="banner-content">
+            <span class="banner-tag">UNACHEZA KWA APP? UNAWEZA</span>
+            <h2>PUNCHIKA PAP!</h2>
+            <p>Notification ikiingia, TAP TEKE ushinde CASH PRIZE instantly.</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="container">
+        <div class="market-header">
+            <span>Teams</span>
+            <div class="market-odds-labels">
+                <span>1</span>
+                <span>X</span>
+                <span>2</span>
             </div>
         </div>
 
-        <!-- Match 2: South Korea vs Uruguay -->
+        <!-- Match 1 -->
         <div class="match-card">
-            <div class="match-info">
-                <span class="category">International • Friendly • 28/09, 14:00</span>
-                <h4>Republic of Korea vs Uruguay</h4>
+            <div class="match-header-row">
+                <span class="category">⚽ International • Int. Friendly...</span>
+                <span class="match-time">28/09, 13:25</span>
             </div>
-            <div class="odds-grid">
-                <button class="odd-btn" onclick="placeBet('Korea vs Uruguay (1)', 2.50)">
-                    <span class="label">1</span>
-                    <span class="value">2.50</span>
-                </button>
-                <button class="odd-btn" onclick="placeBet('Korea vs Uruguay (X)', 3.15)">
-                    <span class="label">X</span>
-                    <span class="value">3.15</span>
-                </button>
-                <button class="odd-btn" onclick="placeBet('Korea vs Uruguay (2)', 2.75)">
-                    <span class="label">2</span>
-                    <span class="value">2.75</span>
-                </button>
+            <div class="match-body">
+                <div class="team-names">
+                    <h4>Japan<br>Venezuela</h4>
+                </div>
+                <div class="odds-grid">
+                    <button class="odd-btn"><span class="value">1.28</span></button>
+                    <button class="odd-btn"><span class="value">5.20</span></button>
+                    <button class="odd-btn"><span class="value">9.00</span></button>
+                </div>
+            </div>
+            <div class="match-footer">
+                <span class="markets-count">+72 Markets</span>
             </div>
         </div>
 
-        <!-- Match 3: Turkey vs Italy -->
+        <!-- Match 2 -->
         <div class="match-card">
-            <div class="match-info">
-                <span class="category">International • UEFA Nations League • 28/09, 21:45</span>
-                <h4>Turkey vs Italy</h4>
+            <div class="match-header-row">
+                <span class="category">⚽ International • Int. Friendly...</span>
+                <span class="match-time">28/09, 14:00</span>
             </div>
-            <div class="odds-grid">
-                <button class="odd-btn" onclick="placeBet('Turkey vs Italy (1)', 2.70)">
-                    <span class="label">1</span>
-                    <span class="value">2.70</span>
-                </button>
-                <button class="odd-btn" onclick="placeBet('Turkey vs Italy (X)', 3.50)">
-                    <span class="label">X</span>
-                    <span class="value">3.50</span>
-                </button>
-                <button class="odd-btn" onclick="placeBet('Turkey vs Italy (2)', 2.60)">
-                    <span class="label">2</span>
-                    <span class="value">2.60</span>
-                </button>
+            <div class="match-body">
+                <div class="team-names">
+                    <h4>Republic Of Korea...<br>Uruguay</h4>
+                </div>
+                <div class="odds-grid">
+                    <button class="odd-btn"><span class="value">2.55</span></button>
+                    <button class="odd-btn"><span class="value">3.20</span></button>
+                    <button class="odd-btn"><span class="value">2.70</span></button>
+                </div>
+            </div>
+            <div class="match-footer">
+                <span class="markets-count">+73 Markets</span>
             </div>
         </div>
-
-        <!-- Virtual Bet Slip Area -->
-        <section class="betslip" style="margin-top: 20px;">
-            <h3>Your Virtual Bet Slip</h3>
-            <div id="bet-history">
-                <p class="no-bets">No active bets yet. Click any odd above to play!</p>
-            </div>
-        </section>
     </main>
 
-    <!-- Bottom Navigation Bar (Exact Betika Style) -->
+    <!-- Bottom Navigation Bar -->
     <footer class="bottom-nav">
         <div class="nav-link active">🏠<br><span>Home</span></div>
-        <div class="nav-link">⏱️<br><span>Live</span></div>
+        <div class="nav-link">⏱️<br><span>Live (137)</span></div>
         <div class="nav-link center-slip">📄</div>
         <div class="nav-link">📋<br><span>My Bets</span></div>
         <div class="nav-link">👤<br><span>Profile</span></div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
