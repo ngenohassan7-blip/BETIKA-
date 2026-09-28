@@ -314,13 +314,13 @@ body {
     font-weight: bold;
 }
 
-/* Fixed Bottom Navigation Bar */
+/* Bottom Navigation Bar */
 .bottom-nav {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #161f2e;
+    background-color: #121a24;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -337,6 +337,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .nav-link.active {
@@ -348,25 +351,17 @@ body {
     margin-top: 2px;
 }
 
+/* Centered Floating Action Button */
 .center-slip {
     background-color: #ffcc00;
     color: #000;
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    margin-top: -14px;
+    margin-top: -16px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+    border: 3px solid #121a24;
 }
-.promo-banner-img {
-    background-image: url('1784289103776-punchikapromo-2000x456-homepage-3--1.webp');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 95px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    }
