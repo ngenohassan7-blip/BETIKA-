@@ -3,27 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Betika Play Money Clone</title>
+    <title>Betika Virtual Clone</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Top Header -->
     <header class="navbar">
-        <div class="logo">Betika<span class="highlight">Virtual</span></div>
-        <div class="wallet">
-            <span>Balance: </span><strong id="user-balance">10,000</strong> <span class="highlight">V-Cash</span>
+        <div class="logo" style="color: #ffcc00; font-weight: bold; font-size: 20px;">Betika!</div>
+        <div class="wallet-container" style="display: flex; align-items: center; gap: 8px;">
+            <div class="wallet" style="font-size: 13px;">
+                <span>Bal: </span><strong id="user-balance">10,000</strong> <span style="color: #ffcc00;">V</span>
+            </div>
+            <button onclick="resetBalance()" style="background-color: #ffcc00; border: none; padding: 5px 10px; border-radius: 4px; font-weight: bold; font-size: 11px; cursor: pointer;">
+                + Top Up
+            </button>
         </div>
     </header>
 
-    <main class="container">
-        <h2>Live & Upcoming Matches</h2>
+    <!-- Complete Top Category Icons Scroll Bar (Start to Finish) -->
+    <nav class="categories-bar">
+        <div class="cat-item active">⚽ Soccer</div>
+        <div class="cat-item">🏆 Ligi Bigi</div>
+        <div class="cat-item">🎮 Virtuals</div>
+        <div class="cat-item">✈️ Aviator</div>
+        <div class="cat-item">❤️ Crash Games</div>
+        <div class="cat-item">🎲 Casino</div>
+        <div class="cat-item">💰 Jackpots</div>
+        <div class="cat-item">⚡ Shikisha Bet</div>
+        <div class="cat-item">📱 Betika Fasta</div>
+        <div class="cat-item">🎁 Promotions</div>
+        <div class="cat-item">🏓 Table Tennis</div>
+        <div class="cat-item">🥊 Boxing</div>
+        <div class="cat-item">⚾ Baseball</div>
+        <div class="cat-item">🏒 Ice Hockey</div>
+        <div class="cat-item">🏈 American Football</div>
+        <div class="cat-item">🏀 Basketball</div>
+        <div class="cat-item">🤾 Handball</div>
+        <div class="cat-item">🎾 Tennis</div>
+        <div class="cat-item">🏉 Rugby</div>
+        <div class="cat-item">🏏 Cricket</div>
+        <div class="cat-item">🎮 ESport Honor of Kings</div>
+        <div class="cat-item">🎯 Darts</div>
+        <div class="cat-item">⚽ Futsal</div>
+        <div class="cat-item">🎮 ESport Counter-Strike</div>
+        <div class="cat-item">🎮 ESport Dota</div>
+        <div class="cat-item">🏐 Volleyball</div>
+        <div class="cat-item">📺 Zoom Soccer</div>
+        <div class="cat-item">🎮 ESport League of Legends</div>
+        <div class="cat-item">📥 Download App</div>
+        <div class="cat-item">⏱️ Livescore</div>
+        <div class="cat-item">⋮ More</div>
+    </nav>
+
+    <!-- Sub-menu Filters -->
+    <div class="sub-filters">
+        <span class="active-tab">Highlights</span>
+        <span>Upcoming</span>
+        <span>Jackpots</span>
+    </div>
+
+    <!-- Main Content Area (Matches) -->
+    <main class="container" style="padding-bottom: 70px;">
         
+        <!-- Match 1: Japan vs Venezuela -->
         <div class="match-card">
             <div class="match-info">
-                <span class="category">International • Friendly</span>
+                <span class="category">International • Friendly • 28/09, 13:25</span>
                 <h4>Japan vs Venezuela</h4>
             </div>
-            
             <div class="odds-grid">
                 <button class="odd-btn" onclick="placeBet('Japan vs Venezuela (1)', 1.22)">
                     <span class="label">1</span>
@@ -39,16 +87,69 @@
                 </button>
             </div>
         </div>
+
+        <!-- Match 2: South Korea vs Uruguay -->
+        <div class="match-card">
+            <div class="match-info">
+                <span class="category">International • Friendly • 28/09, 14:00</span>
+                <h4>Republic of Korea vs Uruguay</h4>
+            </div>
+            <div class="odds-grid">
+                <button class="odd-btn" onclick="placeBet('Korea vs Uruguay (1)', 2.50)">
+                    <span class="label">1</span>
+                    <span class="value">2.50</span>
+                </button>
+                <button class="odd-btn" onclick="placeBet('Korea vs Uruguay (X)', 3.15)">
+                    <span class="label">X</span>
+                    <span class="value">3.15</span>
+                </button>
+                <button class="odd-btn" onclick="placeBet('Korea vs Uruguay (2)', 2.75)">
+                    <span class="label">2</span>
+                    <span class="value">2.75</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Match 3: Turkey vs Italy -->
+        <div class="match-card">
+            <div class="match-info">
+                <span class="category">International • UEFA Nations League • 28/09, 21:45</span>
+                <h4>Turkey vs Italy</h4>
+            </div>
+            <div class="odds-grid">
+                <button class="odd-btn" onclick="placeBet('Turkey vs Italy (1)', 2.70)">
+                    <span class="label">1</span>
+                    <span class="value">2.70</span>
+                </button>
+                <button class="odd-btn" onclick="placeBet('Turkey vs Italy (X)', 3.50)">
+                    <span class="label">X</span>
+                    <span class="value">3.50</span>
+                </button>
+                <button class="odd-btn" onclick="placeBet('Turkey vs Italy (2)', 2.60)">
+                    <span class="label">2</span>
+                    <span class="value">2.60</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Virtual Bet Slip Area -->
+        <section class="betslip" style="margin-top: 20px;">
+            <h3>Your Virtual Bet Slip</h3>
+            <div id="bet-history">
+                <p class="no-bets">No active bets yet. Click any odd above to play!</p>
+            </div>
+        </section>
     </main>
 
-    <section class="betslip">
-        <h3>Your Virtual Bet Slip</h3>
-        <div id="bet-history">
-            <p class="no-bets">No active bets yet. Click any odd to place a virtual bet!</p>
-        </div>
-    </section>
+    <!-- Bottom Navigation Bar (Exact Betika Style) -->
+    <footer class="bottom-nav">
+        <div class="nav-link active">🏠<br><span>Home</span></div>
+        <div class="nav-link">⏱️<br><span>Live</span></div>
+        <div class="nav-link center-slip">📄</div>
+        <div class="nav-link">📋<br><span>My Bets</span></div>
+        <div class="nav-link">👤<br><span>Profile</span></div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-  </html>
-  
+</html>
