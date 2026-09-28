@@ -375,7 +375,12 @@ body {
     background: transparent !important;
     background-color: transparent !important;
 }
-/* Sticky Header & Navigation */
+/* Fix Sticky Header & Navigation */
+body {
+    overflow-x: hidden;
+}
+
+/* Wrap top elements to stay sticky together */
 header, .top-nav, .sub-nav, .filters-bar {
     position: sticky;
     top: 0;
@@ -383,6 +388,3 @@ header, .top-nav, .sub-nav, .filters-bar {
     background-color: #121a24;
 }
 
-main.container {
-    padding-top: 10px;
-}
