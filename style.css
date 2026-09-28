@@ -405,14 +405,16 @@ header, .top-nav, .sub-nav, .filters-bar {
     padding: 12px 16px !important;
     margin-bottom: 0 !important;
 }
-/* Forcefully remove match card background boxes */
-body .match-card, 
-body div.match-card {
-    background: transparent !important;
+/* Ultimate box background stripper */
+main.container div.match-card, 
+main div.match-card, 
+.match-card {
+    background: transparent none !important;
     background-color: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    border-radius: 0 !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
     box-shadow: none !important;
 }
 
