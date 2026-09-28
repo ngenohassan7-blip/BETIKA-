@@ -619,6 +619,41 @@ function toggleMoreMenu() {
         </div>
     </div>
 </div>
+
+<!-- Full Profile Page Overlay -->
+<div id="profilePage" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #0b121c; z-index: 1000; overflow-y: auto; color: #fff; box-sizing: border-box; padding: 15px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid #1a2536; padding-bottom: 12px;">
+        <button onclick="closeProfilePage()" style="background: none; border: none; color: #fff; font-size: 20px; cursor: pointer;">❮</button>
+        <span style="font-size: 16px; font-weight: 500;">Profile</span>
+        <button style="background-color: #ffcc00; color: #000; border: none; padding: 6px 14px; border-radius: 4px; font-weight: bold; font-size: 13px; cursor: pointer;">Deposit</button>
+    </div>
+    <div style="max-width: 450px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 20px; background-color: #16202e; padding: 12px; border-radius: 6px;">
+            <span style="font-size: 16px; font-weight: bold; color: #fff;">👤 (254) 114-622873</span>
+        </div>
+        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <div style="flex: 1; background-color: #16202e; padding: 15px; border-radius: 6px; text-align: center;">
+                <div style="font-size: 12px; color: #8c96a5; margin-bottom: 5px;">Balance</div>
+                <div style="font-size: 16px; font-weight: bold; color: #fff;">KES 0.00</div>
+            </div>
+            <div style="flex: 1; background-color: #16202e; padding: 15px; border-radius: 6px; text-align: center;">
+                <div style="font-size: 12px; color: #8c96a5; margin-bottom: 5px;">Bonus</div>
+                <div style="font-size: 16px; font-weight: bold; color: #fff;">KES 0.32</div>
+            </div>
+        </div>
+        <div style="background-color: #16202e; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+            <div style="font-weight: bold; margin-bottom: 5px; font-size: 14px;">Deposit</div>
+            <div style="font-size: 12px; color: #8c96a5; margin-bottom: 15px;">Send money into your Betika account</div>
+            <button style="width: 100%; background-color: #28a745; color: #fff; border: none; padding: 12px; border-radius: 4px; font-weight: bold; cursor: pointer;">Deposit with Mpesa</button>
+        </div>
+        <div style="text-align: center; margin-top: 30px; margin-bottom: 40px;">
+            <button onclick="handleSignOut()" style="background: none; border: none; color: #ff4d4d; font-size: 15px; font-weight: bold; cursor: pointer;">Sign Out</button>
+        </div>
+        <div style="text-align: center; color: #8c96a5; font-size: 12px; margin-bottom: 20px;">
+            Betika Mobile v6.0.1
+        </div>
+    </div>
+</div>
         
 <script>
 function openRegisterPage() {
@@ -658,7 +693,23 @@ function handleLoginSubmit(event) {
         `;
     }
 }
+
+// --- ADD PROFILE FUNCTIONS HERE ---
+function openProfilePage() {
+    document.getElementById('profilePage').style.display = 'block';
+}
+
+function closeProfilePage() {
+    document.getElementById('profilePage').style.display = 'none';
+}
+
+function handleSignOut() {
+    closeProfilePage();
+    alert('You have signed out successfully.');
+    location.reload();
+}
 </script>
+
 
 
         
