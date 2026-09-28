@@ -695,21 +695,35 @@ function handleLoginSubmit(event) {
     }
 }
 
-// --- ADD PROFILE FUNCTIONS HERE ---
-function openProfilePage() {
-    document.getElementById('profilePage').style.display = 'block';
-}
-
-function closeProfilePage() {
-    document.getElementById('profilePage').style.display = 'none';
-}
-
-function handleSignOut() {
-    closeProfilePage();
-    alert('You have signed out successfully.');
-    location.reload();
-}
+    function openProfilePage() {
+        updateProfileNumber();
+        document.getElementById('profilePage').style.display = 'block';
+    }
+    function closeProfilePage() {
+        document.getElementById('profilePage').style.display = 'none';
+    }
+    function handleSignOut() {
+        localStorage.removeItem('userPhone');
+        closeProfilePage();
+        alert('You have signed out successfully.');
+        location.reload();
+    }
+    function updateProfileNumber() {
+        var savedPhone = localStorage.getItem('userPhone');
+        var phoneElement = document.getElementById('userProfilePhone');
+        if (phoneElement) {
+            if (savedPhone) {
+                phoneElement.innerText = '👤 ' + savedPhone;
+            } else {
+                phoneElement.innerText = '👤 ';
+            }
+        }
+    }
+    window.onload = function() {
+        updateProfileNumber();
+    };
 </script>
+
 
 
 
