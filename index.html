@@ -16,7 +16,8 @@
 
         </div>
         <div class="nav-right">
-            <a href="#" class="login-link">Login</a>
+            <a href="#" class="login-link" onclick="openLoginPage(); return false;">Login</a>
+            
             <a href="#" class="register-btn" onclick="openRegisterPage(); return false;">Register</a>
 
             <button class="search-btn">🔍</button>
@@ -578,7 +579,48 @@ function toggleMoreMenu() {
         </div>
     </div>
 </div>
-
+<!-- Full Login Page Overlay -->
+<div id="loginPage" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #0b121c; z-index: 1000; overflow-y: auto; color: #fff; box-sizing: border-box; padding: 15px;">
+    <div style="display: flex; align-items: center; margin-bottom: 25px; border-bottom: 1px solid #1a2536; padding-bottom: 12px;">
+        <button onclick="closeLoginPage()" style="background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; padding: 0 10px 0 0;">❮</button>
+        <span style="font-size: 18px; font-weight: 500; flex-grow: 1; text-align: center; margin-right: 25px;">Login</span>
+    </div>
+    <div style="max-width: 450px; margin: 0 auto;">
+        <div style="margin-bottom: 20px;">
+            <span style="background-color: #ffcc00; color: #000; font-weight: bold; padding: 4px 8px; font-size: 18px; border-radius: 4px; display: inline-block;">Betika!</span>
+        </div>
+        <p style="font-size: 13px; color: #8c96a5; line-height: 1.5; margin-bottom: 25px;">
+            Enter your phone number and password below to Login to your existing account. Otherwise click on Register with the same details to create a new account.
+        </p>
+        <form onsubmit="handleLoginSubmit(event)">
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; font-size: 14px; font-weight: bold; margin-bottom: 8px; color: #fff;">Phone Number</label>
+                <input type="text" placeholder="e.g. 0712 234567" required style="width: 100%; padding: 12px; background-color: #16202e; border: 1px solid #233146; border-radius: 4px; color: #fff; box-sizing: border-box; font-size: 14px;">
+                <span style="display: block; font-size: 11px; color: #8c96a5; margin-top: 5px;">Enter your phone number</span>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <label style="font-size: 14px; font-weight: bold; color: #fff;">Password</label>
+                    <a href="#" onclick="alert('Password recovery'); return false;" style="color: #28a745; font-size: 12px; text-decoration: none;">Forgot Your Password?</a>
+                </div>
+                <input type="password" required style="width: 100%; padding: 12px; background-color: #16202e; border: 1px solid #233146; border-radius: 4px; color: #fff; box-sizing: border-box; font-size: 14px;">
+                <span style="display: block; font-size: 11px; color: #8c96a5; margin-top: 5px;">Enter your password</span>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                <input type="checkbox" id="keepLoggedIn" checked style="margin-right: 10px; accent-color: #28a745; width: 16px; height: 16px;">
+                <label for="keepLoggedIn" style="font-size: 13px; color: #fff;">Keep me logged in</label>
+            </div>
+            <button type="submit" style="width: 100%; background-color: #28a745; color: white; border: none; padding: 14px; border-radius: 4px; font-weight: bold; font-size: 15px; cursor: pointer; margin-bottom: 20px;">Login</button>
+        </form>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="#" onclick="closeLoginPage(); openRegisterPage(); return false;" style="color: #8c96a5; font-size: 13px; text-decoration: none;">Don't have an account? Register here</a>
+        </div>
+        <div style="text-align: center; margin-top: 30px;">
+            <span style="color: #8c96a5; font-size: 12px;">You are using Betika 🇰🇪 Kenya</span>
+        </div>
+    </div>
+</div>
+        
 <script>
 function openRegisterPage() {
     document.getElementById('registerPage').style.display = 'block';
