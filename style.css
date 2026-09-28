@@ -1,0 +1,119 @@
+body {
+    background-color: #121824;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #1b2432;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #2a3b4c;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #ffcc00;
+}
+
+.wallet {
+    background: #0d121b;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.match-card {
+    background-color: #1b2432;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.match-info .category {
+    font-size: 11px;
+    color: #8c9bae;
+}
+
+.match-info h4 {
+    margin: 5px 0 15px 0;
+}
+
+.odds-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.odd-btn {
+    background-color: #243142;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.odd-btn:hover {
+    background-color: #ffcc00;
+    color: #000;
+}
+
+.odd-btn .label {
+    display: block;
+    font-size: 11px;
+    color: #8c9bae;
+}
+
+.odd-btn:hover .label {
+    color: #333;
+}
+
+.odd-btn .value {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.betslip {
+    background-color: #1b2432;
+    padding: 15px 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.betslip h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #2a3b4c;
+    padding-bottom: 8px;
+}
+
+.no-bets {
+    color: #8c9bae;
+    font-size: 14px;
+}
+
+.bet-item {
+    background: #0d121b;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+  
