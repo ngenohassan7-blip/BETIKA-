@@ -343,7 +343,8 @@ body {
 }
 
 .nav-link.active {
-    color: #ffcc00;
+    color: #ffcc00 !important;
+        
 }
 
 .nav-link span {
