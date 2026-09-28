@@ -663,8 +663,19 @@ function openRegisterPage() {
 function closeRegisterPage() {
     document.getElementById('registerPage').style.display = 'none';
 }
+function openRegisterPage() {
+    document.getElementById('registerPage').style.display = 'block';
+}
+function closeRegisterPage() {
+    document.getElementById('registerPage').style.display = 'none';
+}
 function handleRegisterSubmit(event) {
     event.preventDefault();
+    var phoneInput = event.target.querySelector('input[type="text"], input[type="tel"], input');
+    if (phoneInput && phoneInput.value) {
+        localStorage.setItem('userPhone', phoneInput.value);
+    }
+    updateProfileNumber();
     closeRegisterPage();
     var navRight = document.querySelector('.nav-right');
     if (navRight) {
@@ -684,6 +695,11 @@ function closeLoginPage() {
 }
 function handleLoginSubmit(event) {
     event.preventDefault();
+    var phoneInput = event.target.querySelector('input[type="text"], input[type="tel"], input');
+    if (phoneInput && phoneInput.value) {
+        localStorage.setItem('userPhone', phoneInput.value);
+    }
+    updateProfileNumber();
     closeLoginPage();
     var navRight = document.querySelector('.nav-right');
     if (navRight) {
@@ -695,33 +711,34 @@ function handleLoginSubmit(event) {
     }
 }
 
-    function openProfilePage() {
-        updateProfileNumber();
-        document.getElementById('profilePage').style.display = 'block';
-    }
-    function closeProfilePage() {
-        document.getElementById('profilePage').style.display = 'none';
-    }
-    function handleSignOut() {
-        localStorage.removeItem('userPhone');
-        closeProfilePage();
-        alert('You have signed out successfully.');
-        location.reload();
-    }
-    function updateProfileNumber() {
-        var savedPhone = localStorage.getItem('userPhone');
-        var phoneElement = document.getElementById('userProfilePhone');
-        if (phoneElement) {
-            if (savedPhone) {
-                phoneElement.innerText = '👤 ' + savedPhone;
-            } else {
-                phoneElement.innerText = '👤 ';
-            }
+function openProfilePage() {
+    updateProfileNumber();
+    document.getElementById('profilePage').style.display = 'block';
+}
+function closeProfilePage() {
+    document.getElementById('profilePage').style.display = 'none';
+}
+function handleSignOut() {
+    localStorage.removeItem('userPhone');
+    closeProfilePage();
+    alert('You have signed out successfully.');
+    location.reload();
+}
+function updateProfileNumber() {
+    var savedPhone = localStorage.getItem('userPhone');
+    var phoneElement = document.getElementById('userProfilePhone');
+    if (phoneElement) {
+        if (savedPhone) {
+            phoneElement.innerText = '👤 ' + savedPhone;
+        } else {
+            phoneElement.innerText = '👤 ';
         }
     }
-    window.onload = function() {
-        updateProfileNumber();
-    };
+}
+window.onload = function() {
+    updateProfileNumber();
+};
+
 </script>
 
 
