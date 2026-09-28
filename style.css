@@ -4,26 +4,76 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-bottom: 70px;
+    padding-bottom: 75px;
 }
 
+/* Header Styles */
 .navbar {
     background-color: #161f2e;
-    padding: 10px 15px;
+    padding: 10px 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #2a3b4c;
 }
 
-.wallet {
-    background: #0d121b;
-    padding: 6px 10px;
-    border-radius: 15px;
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.logo {
+    color: #ffcc00;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.logo-dot {
+    color: #4ade80;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.register-btn {
+    background-color: #84cc16;
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
     font-size: 13px;
 }
 
-/* EXACT BETIKA HORIZONTAL SCROLL BAR & BUTTONS */
+.search-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Categories Scroll Bar */
 .categories-bar {
     display: flex;
     flex-direction: row;
@@ -42,44 +92,79 @@ body {
 }
 
 .cat-item {
-    background: #1b2636;
+    background-color: #1b2636;
     border: none;
     border-radius: 6px;
-    color: #94a3b8;
+    color: #8c9bae;
     cursor: pointer;
     padding: 6px 10px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 2px;
-    font-family: Arial, sans-serif;
+    justify-content: center;
+    min-width: 65px;
+    position: relative;
 }
 
 .cat-icon {
-    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2px;
+    color: #8c9bae;
 }
 
 .cat-label {
     font-size: 10px;
+    color: #8c9bae;
 }
 
 .cat-item.active {
+    background-color: #24344d;
     color: #ffffff;
-    background-color: #223043;
     border-bottom: 2px solid #ffcc00;
+}
+
+.cat-item.active .cat-icon,
+.cat-item.active .cat-label {
+    color: #ffffff;
     font-weight: bold;
 }
 
+/* Virtuals "NEW" Badge */
+.cat-item.has-badge {
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 2px;
+    right: 4px;
+    background-color: #ef4444;
+    color: #fff;
+    font-size: 7px;
+    font-weight: bold;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+/* Sub-Filters Tabs Bar */
 .sub-filters {
     display: flex;
     background-color: #161f2e;
-    padding: 10px 15px;
+    padding: 10px 12px;
     gap: 20px;
     font-size: 13px;
-    color: #94a3b8;
+    color: #8c9bae;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
     border-bottom: 1px solid #1b2636;
+}
+
+.sub-filters::-webkit-scrollbar {
+    display: none;
 }
 
 .sub-filters .active-tab {
@@ -87,33 +172,112 @@ body {
     font-weight: bold;
 }
 
+/* Filter Dropdowns Toolbar */
+.filter-toolbar {
+    display: flex;
+    background-color: #161f2e;
+    padding: 8px 12px;
+    gap: 8px;
+    border-bottom: 1px solid #2a3b4c;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.filter-dropdown {
+    background-color: #1b2636;
+    border: 1px solid #2a3b4c;
+    color: #cbd5e1;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* Promo Banner */
+.promo-banner {
+    background: linear-gradient(135deg, #a3e635 0%, #16a34a 100%);
+    margin: 10px;
+    border-radius: 6px;
+    padding: 12px 15px;
+    color: #000;
+}
+
+.banner-tag {
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.promo-banner h2 {
+    margin: 2px 0;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.promo-banner p {
+    margin: 0;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Match Container & Cards */
 .container {
-    padding: 15px;
+    padding: 10px;
     max-width: 600px;
     margin: auto;
 }
 
+.market-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #64748b;
+    padding: 0 5px 6px 5px;
+}
+
+.market-odds-labels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 62%;
+    text-align: center;
+    font-weight: bold;
+}
+
 .match-card {
     background-color: #1b2636;
-    padding: 12px;
     border-radius: 6px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #24344d;
 }
 
-.match-info .category {
+.match-header-row {
+    display: flex;
+    justify-content: space-between;
     font-size: 10px;
-    color: #94a3b8;
+    color: #8c9bae;
+    margin-bottom: 8px;
 }
 
-.match-info h4 {
-    margin: 4px 0 10px 0;
-    font-size: 14px;
+.match-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team-names h4 {
+    margin: 0;
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 1.4;
 }
 
 .odds-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 6px;
+    width: 62%;
 }
 
 .odd-btn {
@@ -121,7 +285,7 @@ body {
     border: none;
     border-radius: 4px;
     color: white;
-    padding: 8px;
+    padding: 8px 4px;
     cursor: pointer;
     text-align: center;
 }
@@ -131,36 +295,26 @@ body {
     color: #000;
 }
 
-.odd-btn .label {
-    display: block;
-    font-size: 10px;
-    color: #94a3b8;
-}
-
 .odd-btn .value {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
 }
 
-.betslip {
-    background-color: #1b2636;
-    padding: 12px;
-    border-radius: 6px;
+.match-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+    border-top: 1px solid #24344d;
+    padding-top: 6px;
 }
 
-.betslip h3 {
-    margin: 0 0 8px 0;
-    font-size: 14px;
-    border-bottom: 1px solid #2a3b4c;
-    padding-bottom: 5px;
+.markets-count {
+    font-size: 10px;
+    color: #4ade80;
+    font-weight: bold;
 }
 
-.no-bets {
-    color: #94a3b8;
-    font-size: 12px;
-}
-
-/* FIXED BOTTOM NAVIGATION BAR */
+/* Fixed Bottom Navigation Bar */
 .bottom-nav {
     position: fixed;
     bottom: 0;
@@ -170,7 +324,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 8px 0;
+    padding: 6px 0;
     border-top: 1px solid #2a3b4c;
     z-index: 1000;
 }
@@ -178,7 +332,7 @@ body {
 .nav-link {
     text-align: center;
     font-size: 10px;
-    color: #94a3b8;
+    color: #8c9bae;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -197,13 +351,13 @@ body {
 .center-slip {
     background-color: #ffcc00;
     color: #000;
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-    margin-top: -15px;
+    font-size: 16px;
+    margin-top: -14px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.4);
 }
