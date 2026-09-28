@@ -4,12 +4,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    padding-bottom: 70px; /* Space for bottom nav */
+    padding-bottom: 70px;
 }
 
 .navbar {
-    background-color: #1b2432;
-    padding: 12px 15px;
+    background-color: #161f2e;
+    padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,18 +23,18 @@ body {
     font-size: 13px;
 }
 
-/* HORIZONTAL SCROLL FIX FOR CATEGORIES */
+/* EXACT BETIKA HORIZONTAL SCROLL BAR & BUTTONS */
 .categories-bar {
     display: flex;
     flex-direction: row;
     background-color: #161f2e;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 10px;
-    gap: 12px;
+    padding: 6px 8px;
+    gap: 6px;
     white-space: nowrap;
     border-bottom: 1px solid #2a3b4c;
-    scrollbar-width: none; /* Hide scrollbar for clean look */
+    scrollbar-width: none;
 }
 
 .categories-bar::-webkit-scrollbar {
@@ -42,30 +42,44 @@ body {
 }
 
 .cat-item {
-    font-size: 13px;
-    color: #8c9bae;
+    background: #1b2636;
+    border: none;
+    border-radius: 6px;
+    color: #94a3b8;
     cursor: pointer;
     padding: 6px 10px;
-    background: #1b2432;
-    border-radius: 4px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2px;
+    font-family: Arial, sans-serif;
+}
+
+.cat-icon {
+    font-size: 16px;
+}
+
+.cat-label {
+    font-size: 10px;
 }
 
 .cat-item.active {
     color: #ffffff;
-    background-color: #243142;
+    background-color: #223043;
     border-bottom: 2px solid #ffcc00;
     font-weight: bold;
 }
 
 .sub-filters {
     display: flex;
-    background-color: #121824;
+    background-color: #161f2e;
     padding: 10px 15px;
     gap: 20px;
     font-size: 13px;
-    color: #8c9bae;
-    border-bottom: 1px solid #1b2432;
+    color: #94a3b8;
+    border-bottom: 1px solid #1b2636;
 }
 
 .sub-filters .active-tab {
@@ -80,7 +94,7 @@ body {
 }
 
 .match-card {
-    background-color: #1b2432;
+    background-color: #1b2636;
     padding: 12px;
     border-radius: 6px;
     margin-bottom: 12px;
@@ -88,7 +102,7 @@ body {
 
 .match-info .category {
     font-size: 10px;
-    color: #8c9bae;
+    color: #94a3b8;
 }
 
 .match-info h4 {
@@ -103,7 +117,7 @@ body {
 }
 
 .odd-btn {
-    background-color: #243142;
+    background-color: #24344d;
     border: none;
     border-radius: 4px;
     color: white;
@@ -120,7 +134,7 @@ body {
 .odd-btn .label {
     display: block;
     font-size: 10px;
-    color: #8c9bae;
+    color: #94a3b8;
 }
 
 .odd-btn .value {
@@ -129,7 +143,7 @@ body {
 }
 
 .betslip {
-    background-color: #1b2432;
+    background-color: #1b2636;
     padding: 12px;
     border-radius: 6px;
 }
@@ -142,15 +156,7 @@ body {
 }
 
 .no-bets {
-    color: #8c9bae;
-    font-size: 12px;
-}
-
-.bet-item {
-    background: #0d121b;
-    padding: 8px;
-    margin-top: 6px;
-    border-radius: 4px;
+    color: #94a3b8;
     font-size: 12px;
 }
 
@@ -172,7 +178,7 @@ body {
 .nav-link {
     text-align: center;
     font-size: 10px;
-    color: #8c9bae;
+    color: #94a3b8;
     cursor: pointer;
     display: flex;
     flex-direction: column;
