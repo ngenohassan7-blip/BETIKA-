@@ -366,3 +366,8 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.4);
     border: 3px solid #121a24;
 }
+/* Fix icon background blocks */
+.nav-link svg {
+    background: transparent !important;
+    background-color: transparent !important;
+}
