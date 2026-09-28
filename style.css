@@ -387,4 +387,14 @@ header, .top-nav, .sub-nav, .filters-bar {
     z-index: 1000;
     background-color: #121a24;
 }
+/* Remove card boxes to make matches flat and seamless */
+.match-card {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 0 !important;
+    padding: 12px 16px !important;
+    margin-bottom: 0 !important;
+    box-shadow: none !important;
+    }
 
