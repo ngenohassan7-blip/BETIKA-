@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betika Play Money Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Betika<span class="highlight">Virtual</span></div>
+        <div class="wallet">
+            <span>Balance: </span><strong id="user-balance">10,000</strong> <span class="highlight">V-Cash</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Live & Upcoming Matches</h2>
+        
+        <div class="match-card">
+            <div class="match-info">
+                <span class="category">International • Friendly</span>
+                <h4>Japan vs Venezuela</h4>
+            </div>
+            
+            <div class="odds-grid">
+                <button class="odd-btn" onclick="placeBet('Japan vs Venezuela (1)', 1.22)">
+                    <span class="label">1</span>
+                    <span class="value">1.22</span>
+                </button>
+                <button class="odd-btn" onclick="placeBet('Japan vs Venezuela (X)', 5.80)">
+                    <span class="label">X</span>
+                    <span class="value">5.80</span>
+                </button>
+                <button class="odd-btn" onclick="placeBet('Japan vs Venezuela (2)', 11.00)">
+                    <span class="label">2</span>
+                    <span class="value">11.00</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <section class="betslip">
+        <h3>Your Virtual Bet Slip</h3>
+        <div id="bet-history">
+            <p class="no-bets">No active bets yet. Click any odd to place a virtual bet!</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+  </html>
+  
