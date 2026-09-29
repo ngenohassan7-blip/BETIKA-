@@ -27,26 +27,55 @@
     <div class="categories-wrapper" style="background-color: #0f1622; position: relative; width: 100%; border-bottom: 1px solid #1a2536;">
     <div class="categories-wrapper" style="background-color: #0f1622; position: relative; width: 100%; border-bottom: 1px solid #1a2536;">
     
-    <!-- Sliding Side Menu Panel -->
-<!-- Sliding Side Menu Panel -->
+    <!-- Sliding Side Menu Panel (Hidden by default) -->
 <div id="sideMenu" style="display: none; position: fixed; top: 0; left: 0; width: 280px; height: 100%; background-color: #121a24; z-index: 1000; overflow-y: auto; padding-top: 50px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
     
-    <!-- Close Button inside sidebar -->
+    <!-- Close Button -->
     <button onclick="toggleSideMenu()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer;">✕</button>
 
-    <!-- Sidebar Menu Items -->
+    <!-- Menu Items -->
     <div style="display: flex; flex-direction: column; padding: 10px 0;">
-        <a href="#" style="padding: 14px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Crash Games'); })">
-            <span style="font-size: 20px;">🚀</span> <span style="font-size: 14px; font-weight: 500;">Crash Games</span>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Crash Games'); })">
+            <span style="font-size: 20px;">🚀</span> <span>Crash Games</span>
         </a>
-        <a href="#" style="padding: 14px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Casino'); })">
-            <span style="font-size: 20px;">🎰</span> <span style="font-size: 14px; font-weight: 500;">Casino</span>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Casino'); })">
+            <span style="font-size: 20px;">🎰</span> <span>Casino</span>
         </a>
-        <a href="#" style="padding: 14px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Jackpots'); })">
-            <span style="font-size: 20px;">💰</span> <span style="font-size: 14px; font-weight: 500;">Jackpots</span>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Jackpots'); })">
+            <span style="font-size: 20px;">💰</span> <span>Jackpots</span>
         </a>
-        <a href="#" style="padding: 14px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Shikisha Bet'); })">
-            <span style="font-size: 20px;">🛡️</span> <span style="font-size: 14px; font-weight: 500;">Shikisha Bet</span>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Shikisha Bet'); })">
+            <span style="font-size: 20px;">🛡️</span> <span>Shikisha Bet</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Table Tennis'); })">
+            <span style="font-size: 20px;">🏓</span> <span>Table Tennis</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Boxing'); })">
+            <span style="font-size: 20px;">🥊</span> <span>Boxing</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Baseball'); })">
+            <span style="font-size: 20px;">⚾</span> <span>Baseball</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Ice Hockey'); })">
+            <span style="font-size: 20px;">🏒</span> <span>Ice Hockey</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('American Football'); })">
+            <span style="font-size: 20px;">🏈</span> <span>American Football</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Basketball'); })">
+            <span style="font-size: 20px;">🏀</span> <span>Basketball</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Tennis'); })">
+            <span style="font-size: 20px;">🎾</span> <span>Tennis</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Rugby'); })">
+            <span style="font-size: 20px;">🏉</span> <span>Rugby</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #1a2536;" onclick="checkLoginAndProceed(function() { alert('Cricket'); })">
+            <span style="font-size: 20px;">🏏</span> <span>Cricket</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px;" onclick="checkLoginAndProceed(function() { alert('Volleyball'); })">
+            <span style="font-size: 20px;">🏐</span> <span>Volleyball</span>
         </a>
     </div>
 </div>
