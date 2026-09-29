@@ -881,162 +881,96 @@ window.onload = function() {
 };
 
 </script>
-<!-- Aviator Full Page Overlay -->
-<div id="aviatorOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0b0e14; z-index: 9999; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; overflow-y: auto; color: #fff;">
-    
-    <!-- Top Navigation Bar -->
-    <div style="display: flex; justify-content: space-between; align-items: center; background: #161a23; padding: 10px 15px; border-bottom: 1px solid #222d3d;">
-        <button onclick="closeAviatorPage()" style="background: none; border: none; color: #fff; font-size: 14px; cursor: pointer; font-weight: 500;">< Go Back</button>
-        <span style="color: #ff334b; font-weight: bold; font-size: 18px; letter-spacing: 0.5px;">Aviator</span>
-        <div style="display: flex; align-items: center; gap: 10px;">
-            <span id="userBalanceDisplay" style="color: #0ecb81; font-weight: bold; font-size: 15px;">1,000.00 KES</span>
-            <button onclick="closeAviatorPage()" style="background: #ff334b; border: none; color: #fff; padding: 4px 10px; border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 12px;">✕</button>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviator Demo</title>
 
-    <!-- Multiplier History Bar -->
-    <div style="background: #11151c; padding: 8px 12px; display: flex; gap: 6px; overflow-x: auto; border-bottom: 1px solid #1f2937;">
-        <span style="background: #1b2230; color: #20d592; padding: 3px 8px; border-radius: 12px; font-size: 11px; font-weight: bold;">2.36x</span>
-        <span style="background: #1b2230; color: #36c5f0; padding: 3px 8px; border-radius: 12px; font-size: 11px; font-weight: bold;">1.16x</span>
-        <span style="background: #1b2230; color: #c084fc; padding: 3px 8px; border-radius: 12px; font-size: 11px; font-weight: bold;">6.91x</span>
-        <span style="background: #1b2230; color: #36c5f0; padding: 3px 8px; border-radius: 12px; font-size: 11px; font-weight: bold;">1.44x</span>
-    </div>
-
-    <!-- Main Flight Screen Area -->
-    <div style="background: linear-gradient(180deg, #121824 0%, #0b0e14 100%); height: 240px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; border-bottom: 1px solid #1f2937;">
-        <div id="gameMultiplier" style="font-size: 42px; font-weight: 900; color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.2);">1.00x</div>
-        <div id="flightStatus" style="font-size: 13px; color: #8c96a5; margin-top: 4px;">Waiting for next flight...</div>
-        <div style="position: absolute; right: 15px; bottom: 10px; font-size: 11px; color: #526071; display: flex; align-items: center; gap: 4px;">
-            <span>🛡️ SPRIBE Official Game</span>
-        </div>
-    </div>
-
-    <!-- Betting Panel Container -->
-    <div style="padding: 12px; display: flex; flex-direction: column; gap: 12px; max-width: 500px; margin: 0 auto;">
-        <div style="background: #161a23; border-radius: 10px; padding: 12px; border: 1px solid #222d3d;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
-                <div style="display: flex; background: #0b0e14; border-radius: 6px; padding: 2px;">
-                    <button style="background: #222d3d; color: #fff; border: none; padding: 4px 14px; border-radius: 4px; font-size: 12px; font-weight: bold;">Bet</button>
-                    <button style="background: none; color: #8c96a5; border: none; padding: 4px 14px; font-size: 12px;">Auto</button>
-                </div>
-            </div>
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
-                <div style="display: flex; align-items: center; background: #0b0e14; border: 1px solid #222d3d; border-radius: 6px; padding: 4px 8px; flex: 1;">
-                    <button onclick="adjustStake(1, -10)" style="background: #222d3d; color: #fff; border: none; width: 26px; height: 26px; border-radius: 4px; font-weight: bold; cursor: pointer;">-</button>
-                    <input id="stakeInput1" type="number" value="10.00" style="background: none; border: none; color: #fff; width: 100%; text-align: center; font-size: 16px; font-weight: bold; outline: none;">
-                    <button onclick="adjustStake(1, 10)" style="background: #222d3d; color: #fff; border: none; width: 26px; height: 26px; border-radius: 4px; font-weight: bold; cursor: pointer;">+</button>
-                </div>
-                <button id="actionBtn1" onclick="handleBet(1)" style="background: #0ecb81; color: #0b0e14; border: none; padding: 12px 24px; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer; flex: 1; transition: 0.2s;">BET (10 KES)</button>
-            </div>
-            <div style="display: flex; gap: 6px; margin-top: 8px;">
-                <button onclick="setStake(1, 50)" style="background: #1f2937; border: none; color: #8c96a5; padding: 4px; border-radius: 4px; font-size: 11px; flex: 1; cursor: pointer;">50</button>
-                <button onclick="setStake(1, 100)" style="background: #1f2937; border: none; color: #8c96a5; padding: 4px; border-radius: 4px; font-size: 11px; flex: 1; cursor: pointer;">100</button>
-                <button onclick="setStake(1, 500)" style="background: #1f2937; border: none; color: #8c96a5; padding: 4px; border-radius: 4px; font-size: 11px; flex: 1; cursor: pointer;">500</button>
-                <button onclick="setStake(1, 1000)" style="background: #1f2937; border: none; color: #8c96a5; padding: 4px; border-radius: 4px; font-size: 11px; flex: 1; cursor: pointer;">1000</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    let userBalance = 1000.00;
-    let isPlaying = false;
-    let currentMultiplier = 1.00;
-    let betActive = false;
-    let betAmount = 10.00;
-    let gameInterval = null;
-
-    function openAviatorPage() {
-        document.getElementById('aviatorOverlay').style.display = 'block';
-        updateUI();
-    }
-    
-    function closeAviatorPage() {
-        document.getElementById('aviatorOverlay').style.display = 'none';
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      overflow: hidden;
     }
 
-    function setStake(panel, amount) {
-        document.getElementById('stakeInput' + panel).value = amount.toFixed(2);
+    /* Top Bar with Back Button on left and Fullscreen on right */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #161a23;
+      padding: 8px 12px;
+      border-bottom: 1px solid #222d3d;
+      height: 40px;
+      box-sizing: border-box;
     }
 
-    function adjustStake(panel, amount) {
-        let input = document.getElementById('stakeInput' + panel);
-        let val = parseFloat(input.value) || 0;
-        val = Math.max(10, val + amount);
-        input.value = val.toFixed(2);
+    .back-btn, .fullscreen-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 13px;
+      cursor: pointer;
+      font-weight: 500;
     }
 
-    function updateUI() {
-        let balanceEl = document.getElementById('userBalanceDisplay');
-        if (balanceEl) {
-            balanceEl.innerText = userBalance.toLocaleString('en-US', {minimumFractionDigits: 2}) + ' KES';
+    .fullscreen-btn {
+      color: #8c96a5;
+      font-size: 11px;
+    }
+
+    .game-frame {
+      width: 100%;
+      height: calc(100vh - 40px);
+      border: 0;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar with Back Button and Fullscreen -->
+  <div class="top-bar">
+    <button class="back-btn" onclick="goBack()">&lt; Go Back</button>
+    <button class="fullscreen-btn" onclick="toggleFullScreen()">View Fullscreen 🔲</button>
+  </div>
+
+  <!-- Official Game Frame -->
+  <iframe
+    class="game-frame"
+    src="https://demo.spribe.io/launch/aviator?currency=KES&amp;lang=EN"
+    title="Aviator Demo"
+    allowfullscreen>
+  </iframe>
+
+  <script>
+    function goBack() {
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        // Change this fallback URL if you want it to go somewhere specific when there's no history
+        window.location.href = '/'; 
+      }
+    }
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {});
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
         }
+      }
     }
+  </script>
 
-    function handleBet(panel) {
-        let inputVal = parseFloat(document.getElementById('stakeInput' + panel).value);
-        let btn = document.getElementById('actionBtn1');
 
-        if (!betActive) {
-            if (userBalance < inputVal) {
-                alert("Insufficient balance! Please deposit.");
-                return;
-            }
-            userBalance -= inputVal;
-            betAmount = inputVal;
-            betActive = true;
-            updateUI();
-            
-            btn.style.background = '#f6465d';
-            btn.innerText = 'CANCEL';
-
-            if (!isPlaying) startFlightSimulation();
-        } else {
-            let winAmount = betAmount * currentMultiplier;
-            userBalance += winAmount;
-            betActive = false;
-            updateUI();
-            
-            btn.style.background = '#0ecb81';
-            btn.innerText = 'BET (' + betAmount + ' KES)';
-            document.getElementById('flightStatus').innerText = 'Cashed out! Won ' + winAmount.toFixed(2) + ' KES';
-        }
-    }
-
-    function startFlightSimulation() {
-        isPlaying = true;
-        currentMultiplier = 1.00;
-        let crashAt = (Math.random() * 4 + 1.2).toFixed(2);
-
-        document.getElementById('flightStatus').innerText = 'Flying...';
-        
-        gameInterval = setInterval(() => {
-            currentMultiplier += 0.03;
-            document.getElementById('gameMultiplier').innerText = currentMultiplier.toFixed(2) + 'x';
-
-            if (currentMultiplier >= crashAt) {
-                clearInterval(gameInterval);
-                isPlaying = false;
-                document.getElementById('flightStatus').innerText = 'Flew away! (@ ' + crashAt + 'x)';
-                document.getElementById('gameMultiplier').style.color = '#f6465d';
-
-                if (betActive) {
-                    betActive = false;
-                    let btn = document.getElementById('actionBtn1');
-                    btn.style.background = '#0ecb81';
-                    btn.innerText = 'BET (' + betAmount + ' KES)';
-                }
-
-                setTimeout(() => {
-                    document.getElementById('gameMultiplier').style.color = '#fff';
-                    if (!betActive) document.getElementById('flightStatus').innerText = 'Waiting for next round...';
-                }, 3000);
-            }
-        }, 100);
-    }
-</script>
-
-    
 
 
 
