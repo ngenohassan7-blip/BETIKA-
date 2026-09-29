@@ -31,22 +31,30 @@
     <div style="display: flex; align-items: center; width: 100%;">
         <!-- Scrolling sports items (Larger sizes) -->
         <div id="categoriesScroll" class="categories-scroll" style="display: flex; overflow-x: auto; white-space: nowrap; flex-grow: 1; scrollbar-width: none; -webkit-overflow-scrolling: touch; align-items: center; padding: 6px 0;">
-            <button class="cat-item active" style="flex-shrink: 0; background: none; border: none; color: #fff; padding: 6px 14px; text-align: center; cursor: pointer;">
+            
+            <button class="cat-item active" style="flex-shrink: 0; background: none; border: none; color: #fff; padding: 6px 14px; text-align: center; cursor: pointer;" onclick="checkLoginAndProceed(function() { alert('Welcome to Soccer!'); })">
                 <span style="display: block; font-size: 22px; margin-bottom: 3px;">⚽</span>
                 <span style="display: block; font-size: 12px; font-weight: 500;">Soccer</span>
             </button>
-            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;">
+
+            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;" onclick="checkLoginAndProceed(function() { alert('Welcome to Ligi Bigi!'); })">
                 <span style="display: block; font-size: 22px; margin-bottom: 3px;">🏆</span>
                 <span style="display: block; font-size: 12px; font-weight: 500;">Ligi Bigi</span>
             </button>
-            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;">
+
+            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;" onclick="checkLoginAndProceed(function() { alert('Welcome to Virtuals!'); })">
                 <span style="display: block; font-size: 22px; margin-bottom: 3px;">🎮</span>
                 <span style="display: block; font-size: 12px; font-weight: 500;">Virtuals</span>
             </button>
-            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;" onclick="openAviatorPage()">
-    <span style="display: block; font-size: 22px; margin-bottom: 3px;">✈️</span>
-    <span style="display: block; font-size: 12px; font-weight: 500;">Aviator</span>
-</button>
+
+            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;" onclick="checkLoginAndProceed(openAviatorPage)">
+                <span style="display: block; font-size: 22px; margin-bottom: 3px;">✈️</span>
+                <span style="display: block; font-size: 12px; font-weight: 500;">Aviator</span>
+            </button>
+
+        </div>
+    </div>
+
 
             <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;">
                 <span style="display: block; font-size: 22px; margin-bottom: 3px;">🚀</span>
@@ -424,17 +432,19 @@ function toggleMoreMenu() {
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
         <span>Live (137)</span>
     </button>
-    <div class="center-slip">
+    <div class="center-slip" onclick="checkLoginAndProceed(function() { /* open bet slip action if any */ })">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
     </div>
-    <button class="nav-link">
+    <button class="nav-link" onclick="checkLoginAndProceed(function() { alert('Opening My Bets'); })">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 16H4V8h16v12z"/></svg>
         <span>My Bets</span>
     </button>
-    <button class="nav-link" onclick="openProfilePage()">
-    <svg viewBox="0 0 24 24" width="20" height="20" ...>
-    <span>Profile</span>
-</button>
+    <button class="nav-link" onclick="checkLoginAndProceed(openProfilePage)">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        <span>Profile</span>
+    </button>
+</footer>
+
 
 </footer>
 
@@ -877,6 +887,23 @@ function handleSignOut() {
     }
 function openAviatorPage() {
   window.location.href = 'aviator.html';
+    }
+    function checkLoginAndProceed(callbackAction) {
+      var userPhone = localStorage.getItem('userPhone');
+      
+      if (!userPhone) {
+        if (typeof openLoginPage === 'function') {
+          openLoginPage();
+        } else {
+          alert('Please log in or register first to continue.');
+        }
+        return false;
+      }
+      
+      if (typeof callbackAction === 'function') {
+        callbackAction();
+      }
+      return true;
     }
     
 window.onload = function() {
