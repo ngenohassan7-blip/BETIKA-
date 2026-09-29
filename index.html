@@ -367,26 +367,43 @@ function toggleMoreMenu() {
 
 
     <!-- Bottom Navigation Bar -->
-<footer class="bottom-nav">
-    <button class="nav-link active">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-        <span>Home</span>
-    </button>
-    <button class="nav-link">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-        <span>Live (137)</span>
-    </button>
-    <div class="center-slip">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+<nav style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #0f1622; border-top: 1px solid #1a2536; display: flex; justify-content: space-around; align-items: center; padding: 8px 0; z-index: 9999;">
+    
+    <!-- Home -->
+    <a href="index.html" style="text-decoration: none; color: #22c55e; display: flex; flex-direction: column; align-items: center; font-size: 10px; font-weight: 500;">
+        <span style="font-size: 18px; margin-bottom: 2px;">🏠</span>
+        Home
+    </a>
+
+    <!-- Live -->
+    <a href="#" onclick="alert('Live games')" style="text-decoration: none; color: #8c96a5; display: flex; flex-direction: column; align-items: center; font-size: 10px; font-weight: 500;">
+        <span style="font-size: 18px; margin-bottom: 2px;">▶️</span>
+        Live (149)
+    </a>
+
+    <!-- Center BetSlip Button -->
+    <div style="position: relative; top: -12px;">
+        <button onclick="alert('BetSlip')" style="background-color: #ffd700; border: none; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5); cursor: pointer;">
+            <span style="font-size: 20px;">📄</span>
+        </button>
     </div>
-    <button class="nav-link">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 6h-4V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm10 16H4V8h16v12z"/></svg>
-        <span>My Bets</span>
-    </button>
-    <button class="nav-link" onclick="openProfilePage()">
-    <svg viewBox="0 0 24 24" width="20" height="20" ...>
-    <span>Profile</span>
-</button>
+
+    <!-- My Bets -->
+    <a href="#" onclick="checkLoginAndProceed(function() { alert('My Bets'); })" style="text-decoration: none; color: #8c96a5; display: flex; flex-direction: column; align-items: center; font-size: 10px; font-weight: 500;">
+        <span style="font-size: 18px; margin-bottom: 2px;">💼</span>
+        My Bets
+    </a>
+
+    <!-- Profile -->
+    <a href="#" onclick="checkLoginAndProceed(function() { alert('Profile'); })" style="text-decoration: none; color: #8c96a5; display: flex; flex-direction: column; align-items: center; font-size: 10px; font-weight: 500;">
+        <span style="font-size: 18px; margin-bottom: 2px;">👤</span>
+        Profile
+    </a>
+</nav>
+
+<!-- Extra bottom padding to ensure content isn't hidden behind the fixed bar -->
+<div style="height: 60px;"></div>
+
 
 
 
