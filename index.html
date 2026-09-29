@@ -820,12 +820,17 @@ function handleLoginSubmit(event) {
 
 <script>
 function openProfilePage() {
-    updateProfileNumber();
+    alert('Function triggered!'); // Test 1: Does the click reach the function?
     var profilePage = document.getElementById('profilePage');
     if (profilePage) {
         profilePage.style.display = 'block';
+        updateProfileNumber();
+        alert('Overlay opened!'); // Test 2: Did it find the overlay and try to display it?
+    } else {
+        alert('Error: profilePage div not found!'); // Test 3: Is the ID missing or misspelled?
     }
 }
+
 
 function closeProfilePage() {
     var profilePage = document.getElementById('profilePage');
