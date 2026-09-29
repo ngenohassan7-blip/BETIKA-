@@ -27,33 +27,29 @@
     <div class="categories-wrapper" style="background-color: #0f1622; position: relative; width: 100%; border-bottom: 1px solid #1a2536;">
     <div class="categories-wrapper" style="background-color: #0f1622; position: relative; width: 100%; border-bottom: 1px solid #1a2536;">
     
-    <!-- Top Bar Container -->
-    <div style="display: flex; align-items: center; width: 100%;">
-        <!-- Scrolling sports items (Larger sizes) -->
-        <div id="categoriesScroll" class="categories-scroll" style="display: flex; overflow-x: auto; white-space: nowrap; flex-grow: 1; scrollbar-width: none; -webkit-overflow-scrolling: touch; align-items: center; padding: 6px 0;">
-            
-            <button class="cat-item active" style="flex-shrink: 0; background: none; border: none; color: #fff; padding: 6px 14px; text-align: center; cursor: pointer;" onclick="checkLoginAndProceed(function() { alert('Welcome to Soccer!'); })">
-                <span style="display: block; font-size: 22px; margin-bottom: 3px;">⚽</span>
-                <span style="display: block; font-size: 12px; font-weight: 500;">Soccer</span>
-            </button>
+    <!-- Sliding Side Menu Panel -->
+<div id="sideMenu" style="position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background-color: #121a24; z-index: 1000; transition: left 0.3s ease; overflow-y: auto; padding-top: 50px; box-shadow: 2px 0 10px rgba(0,0,0,0.5);">
+    
+    <!-- Close Button inside sidebar -->
+    <button onclick="toggleSideMenu()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: #fff; font-size: 20px; cursor: pointer;">✕</button>
 
-            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;" onclick="checkLoginAndProceed(function() { alert('Welcome to Ligi Bigi!'); })">
-                <span style="display: block; font-size: 22px; margin-bottom: 3px;">🏆</span>
-                <span style="display: block; font-size: 12px; font-weight: 500;">Ligi Bigi</span>
-            </button>
-
-            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;" onclick="checkLoginAndProceed(function() { alert('Welcome to Virtuals!'); })">
-                <span style="display: block; font-size: 22px; margin-bottom: 3px;">🎮</span>
-                <span style="display: block; font-size: 12px; font-weight: 500;">Virtuals</span>
-            </button>
-
-            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;" onclick="checkLoginAndProceed(openAviatorPage)">
-                <span style="display: block; font-size: 22px; margin-bottom: 3px;">✈️</span>
-                <span style="display: block; font-size: 12px; font-weight: 500;">Aviator</span>
-            </button>
-
-        </div>
+    <!-- Sidebar Menu Items -->
+    <div style="display: flex; flex-direction: column; padding: 10px 0;">
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px;" onclick="checkLoginAndProceed(function() { alert('Crash Games'); })">
+            <span style="font-size: 20px;">🚀</span> <span>Crash Games</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px;" onclick="checkLoginAndProceed(function() { alert('Casino'); })">
+            <span style="font-size: 20px;">🎰</span> <span>Casino</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px;" onclick="checkLoginAndProceed(function() { alert('Jackpots'); })">
+            <span style="font-size: 20px;">💰</span> <span>Jackpots</span>
+        </a>
+        <a href="#" style="padding: 12px 20px; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 12px;" onclick="checkLoginAndProceed(function() { alert('Shikisha Bet'); })">
+            <span style="font-size: 20px;">🛡️</span> <span>Shikisha Bet</span>
+        </a>
     </div>
+</div>
+
 
 
             <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 14px; text-align: center; cursor: pointer;">
