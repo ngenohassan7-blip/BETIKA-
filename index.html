@@ -817,59 +817,63 @@ function handleLoginSubmit(event) {
     }
 }
 
+<script>
 function openProfilePage() {
-    var savedPhone = localStorage.getItem('userPhone');
-    if (!savedPhone) {
-        alert('Please log in or register first to view your profile.');
-        openLoginPage();
-        return;
-    }
     updateProfileNumber();
-    document.getElementById('profilePage').style.display = 'block';
+    var profilePage = document.getElementById('profilePage');
+    if (profilePage) {
+        profilePage.style.display = 'block';
+    }
 }
 
 function closeProfilePage() {
-    document.getElementById('profilePage').style.display = 'none';
+    var profilePage = document.getElementById('profilePage');
+    if (profilePage) {
+        profilePage.style.display = 'none';
+    }
 }
+
 function handleSignOut() {
     localStorage.removeItem('userPhone');
     closeProfilePage();
     alert('You have signed out successfully.');
     location.reload();
 }
-    function updateProfileNumber() {
-        var savedPhone = localStorage.getItem('userPhone') || '114-622873';
-        var phoneElement = document.getElementById('userProfilePhone');
-        if (phoneElement) {
-            let cleaned = savedPhone.replace(/^(\+?254|0)/, '');
-            phoneElement.innerText = `(254) ${cleaned}`;
-        }
+
+function updateProfileNumber() {
+    var savedPhone = localStorage.getItem('userPhone') || '114-622873';
+    var phoneElement = document.getElementById('userProfilePhone');
+    if (phoneElement) {
+        let cleaned = savedPhone.replace(/^(\+?254|0)/, '');
+        phoneElement.innerText = `(254) ${cleaned}`;
     }
+}
+
 function openAviatorPage() {
-  window.location.href = 'aviator.html';
-    }
-    function checkLoginAndProceed(callbackAction) {
-      var userPhone = localStorage.getItem('userPhone');
-      
-      if (!userPhone) {
+    window.location.href = 'aviator.html';
+}
+
+function checkLoginAndProceed(callbackAction) {
+    var userPhone = localStorage.getItem('userPhone');
+    
+    if (!userPhone) {
         if (typeof openLoginPage === 'function') {
-          openLoginPage();
+            openLoginPage();
         } else {
-          alert('Please log in or register first to continue.');
+            alert('Please log in or register first to continue.');
         }
         return false;
-      }
-      
-      if (typeof callbackAction === 'function') {
-        callbackAction();
-      }
-      return true;
     }
+    
+    if (typeof callbackAction === 'function') {
+        callbackAction();
+    }
+    return true;
+}
     
 window.onload = function() {
     updateProfileNumber();
 };
-
 </script>
 
 
