@@ -15,16 +15,29 @@
             <img src="logo_KE.png" alt="Betika" style="height: 28px; width: auto;">
 
         </div>
-                <div class="nav-right" style="display: flex; align-items: center; gap: 8px;">
-    <!-- Deposit Button -->
-    <button onclick="handleDepositClick()" style="background-color: #ffd700; color: #121a24; border: none; padding: 6px 14px; border-radius: 16px; font-weight: bold; font-size: 12px; cursor: pointer;">Deposit</button>
-    
-    <!-- Search Icon Button -->
-    <button class="search-btn" style="background: rgba(255,255,255,0.1); border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer;">🔍</button>
-    
-    <!-- Notification Bell Button -->
-    <button onclick="alert('Notifications')" style="background: rgba(255,255,255,0.1); border: none; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer;">🔔</button>
-</div>
+                    <div class="nav-right" style="display: flex; align-items: center; gap: 8px;">
+        <!-- Deposit Button -->
+        <button onclick="openProfilePage();" style="background-color: #ffd700; color: #000; font-weight: bold; font-size: 13px; border: none; padding: 6px 14px; border-radius: 16px; cursor: pointer;">
+            Deposit
+        </button>
+
+        <!-- Search Icon Button -->
+        <button class="search-btn" style="background: none; border: none; cursor: pointer; padding: 6px; display: flex; align-items: center; justify-content: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+        </button>
+
+        <!-- Notification Bell Icon Button -->
+        <button onclick="alert('Notifications')" style="background: none; border: none; cursor: pointer; padding: 6px; display: flex; align-items: center; justify-content: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+        </button>
+    </div>
+
 
     </header>
 
