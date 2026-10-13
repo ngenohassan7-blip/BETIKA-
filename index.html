@@ -388,24 +388,34 @@
     }
 
     function handleAuth(event) {
-      event.preventDefault();
+  event.preventDefault();
 
-      // Check active form & get its phone input
-      const isLoginVisible = document.getElementById('loginForm').style.display !== 'none';
-      const phoneInput = isLoginVisible ? document.getElementById('loginPhone') : document.getElementById('regPhone');
-      const phoneVal = phoneInput.value.trim();
+  // Check active form & get its phone input
+  const isLoginVisible = document.getElementById('loginForm').style.display !== 'none';
+  const phoneInput = isLoginVisible ? document.getElementById('loginPhone') : document.getElementById('regPhone');
+  const phoneVal = phoneInput.value.trim();
 
-      // Ensure exact 10 digits
-      const phoneRegex = /^[0-9]{10}$/;
-      if (!phoneRegex.test(phoneVal)) {
-        alert('Please enter a valid 10-digit phone number (e.g. 0712345678)');
-        return;
-      }
+  // Ensure exact 10 digits
+  const phoneRegex = /^[0-9]{10}$/;
+  if (!phoneRegex.test(phoneVal)) {
+    alert('Please enter a valid 10-digit phone number (e.g. 0712345678)');
+    return;
+  }
 
-      // Store session status & redirect straight to dashboard
-      localStorage.setItem('isLoggedIn', 'true');
-      window.location.href = 'dashboard.html';
-    }
+  // Format number to (254) XXX-XXXXXX style
+  let formattedPhone = phoneVal;
+  if (phoneVal.startsWith('0')) {
+    formattedPhone = '(254) ' + phoneVal.substring(1, 4) + '-' + phoneVal.substring(4);
+  }
+
+  // Save session status and phone number
+  localStorage.setItem('isLoggedIn', 'true');
+  localStorage.setItem('userPhone', formattedPhone);
+  
+  // Redirect to dashboard
+  window.location.href = 'dashboard.html';
+}
+
   </script>
 </body>
 </html>
