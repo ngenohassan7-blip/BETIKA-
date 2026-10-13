@@ -20,7 +20,7 @@
       flex-direction: column;
     }
 
-    /* Top Navigation Bar */
+    /* Top Bar */
     .top-bar {
       height: 48px;
       display: flex;
@@ -48,7 +48,7 @@
       color: #ffffff;
     }
 
-    /* Main Container */
+    /* Main Content */
     .content {
       padding: 24px 16px;
       max-width: 440px;
@@ -76,7 +76,7 @@
       font-weight: bold;
     }
 
-    /* Description Text */
+    /* Text Description */
     .desc-text {
       font-size: 12px;
       color: #8c96a5;
@@ -87,7 +87,6 @@
     /* Form Fields */
     .form-group {
       margin-bottom: 20px;
-      position: relative;
     }
 
     .label-row {
@@ -136,7 +135,7 @@
       margin-top: 4px;
     }
 
-    /* Checkbox Rows */
+    /* Checkbox Styles */
     .checkbox-row {
       display: flex;
       align-items: flex-start;
@@ -174,7 +173,7 @@
       text-decoration: none;
     }
 
-    /* Action Buttons */
+    /* Buttons */
     .btn-login {
       width: 100%;
       height: 44px;
@@ -201,7 +200,7 @@
       margin-bottom: 24px;
     }
 
-    /* Switch Option Link */
+    /* Toggle Links */
     .switch-link {
       text-align: center;
       font-size: 13px;
@@ -237,12 +236,18 @@
       font-size: 11px;
     }
   </style>
+  <script>
+    // Auto-redirect to dashboard if already logged in
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      window.location.href = 'dashboard.html';
+    }
+  </script>
 </head>
 <body>
 
   <!-- Top Bar -->
   <div class="top-bar">
-    <button class="back-btn" onclick="window.location.href='index.html'">
+    <button class="back-btn" onclick="window.location.href='dashboard.html'">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M15 18l-6-6 6-6"/>
       </svg>
@@ -250,7 +255,7 @@
     <div class="page-title" id="topTitle">Login</div>
   </div>
 
-  <!-- Content -->
+  <!-- Content Area -->
   <div class="content">
     
     <!-- Logo -->
@@ -258,7 +263,7 @@
       <span class="logo-text">Betika<span class="logo-sub">.com</span></span>
     </div>
 
-    <!-- Description -->
+    <!-- Instructions -->
     <p class="desc-text">
       Enter your phone number and password below to Login to your existing account. Otherwise click on Register with the same details to create a new account.
     </p>
@@ -269,8 +274,8 @@
         <div class="label-row">
           <label class="field-label">Phone Number</label>
         </div>
-        <input type="tel" class="input-field" placeholder="e.g. 0712 234567" required>
-        <div class="field-caption">Enter your phone number</div>
+        <input type="tel" id="loginPhone" class="input-field" placeholder="e.g. 0712345678" maxlength="10" pattern="[0-9]{10}" inputmode="numeric" required>
+        <div class="field-caption">Enter your 10-digit phone number</div>
       </div>
 
       <div class="form-group">
@@ -313,8 +318,8 @@
         <div class="label-row">
           <label class="field-label">Phone Number</label>
         </div>
-        <input type="tel" class="input-field" placeholder="e.g. 0712 234567" required>
-        <div class="field-caption">Enter your phone number</div>
+        <input type="tel" id="regPhone" class="input-field" placeholder="e.g. 0712345678" maxlength="10" pattern="[0-9]{10}" inputmode="numeric" required>
+        <div class="field-caption">Enter your 10-digit phone number</div>
       </div>
 
       <div class="form-group">
@@ -389,9 +394,24 @@
 
     function handleAuth(event) {
       event.preventDefault();
+
+      // Check active form & get its phone input
+      const isLoginVisible = document.getElementById('loginForm').style.display !== 'none';
+      const phoneInput = isLoginVisible ? document.getElementById('loginPhone') : document.getElementById('regPhone');
+      const phoneVal = phoneInput.value.trim();
+
+      // Ensure exact 10 digits
+      const phoneRegex = /^[0-9]{10}$/;
+      if (!phoneRegex.test(phoneVal)) {
+        alert('Please enter a valid 10-digit phone number (e.g. 0712345678)');
+        return;
+      }
+
+      // Store session status & redirect straight to dashboard
       localStorage.setItem('isLoggedIn', 'true');
-      window.location.href = 'index.html';
+      window.location.href = 'dashboard.html';
     }
   </script>
 </body>
 </html>
+ 
