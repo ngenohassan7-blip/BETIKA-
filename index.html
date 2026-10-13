@@ -91,10 +91,24 @@
     <span style="display: block; font-size: 10px; font-weight: 500; color: #8c96a5;">Crash Games</span>
 </button>
 
-            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 12px; text-align: center; cursor: pointer;">
-                <span style="display: block; font-size: 16px; margin-bottom: 2px;">🎰</span>
-                <span style="display: block; font-size: 10px; font-weight: 500;">Casino</span>
-            </button>
+            <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 12px; text-align: center; cursor: pointer; display: flex; flex-direction: column; align-items: center;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 2px;">
+        <!-- Isometric Main Dice Body -->
+        <path d="M12 2L20 6.5V15.5L12 20L4 15.5V6.5L12 2Z" fill="#ffffff" stroke="#6b7d8e" stroke-width="1" stroke-linejoin="round"/>
+        <!-- Shaded Side Facet -->
+        <path d="M12 11V20L4 15.5V6.5L12 11Z" fill="#d1d5db" opacity="0.6"/>
+        <!-- Top Facet -->
+        <path d="M12 2L20 6.5L12 11L4 6.5L12 2Z" fill="#ffffff"/>
+        <!-- Dice Dots / Pip Details -->
+        <circle cx="12" cy="6.5" r="1" fill="#0f1a23"/>
+        <circle cx="8" cy="11" r="0.9" fill="#0f1a23"/>
+        <circle cx="8" cy="15" r="0.9" fill="#0f1a23"/>
+        <circle cx="16" cy="11" r="0.9" fill="#0f1a23"/>
+        <circle cx="16" cy="15" r="0.9" fill="#0f1a23"/>
+    </svg>
+    <span style="display: block; font-size: 10px; font-weight: 500; color: #8c96a5;">Casino</span>
+</button>
+
             <button class="cat-item" style="flex-shrink: 0; background: none; border: none; color: #8c96a5; padding: 6px 12px; text-align: center; cursor: pointer;">
                 <span style="display: block; font-size: 16px; margin-bottom: 2px;">💰</span>
                 <span style="display: block; font-size: 10px; font-weight: 500;">Jackpots</span>
@@ -105,7 +119,7 @@
         <div style="flex-shrink: 0; background-color: #0f1622; border-left: 1px solid rgba(255,255,255,0.1); z-index: 5; display: flex; align-items: center;">
             <button onclick="toggleMoreMenu()" id="moreBtn" style="background: none; border: none; color: #8c96a5; padding: 10px 14px; cursor: pointer; text-align: center;">
                 <span id="moreIcon" style="font-size: 14px; font-weight: bold; display: block; line-height: 14px; margin-bottom: 2px;">⋮</span>
-                <span id="moreText" style="font-size: 10px; display: block; font-weight: 500;">More</span>
+                <span id="moreText" styl⁵-size: 10px; display: block; font-weight: 500;">More</span>
             </button>
         </div>
     </div>
