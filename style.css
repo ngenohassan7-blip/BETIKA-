@@ -285,14 +285,15 @@ body {
 }
 
 .odd-btn {
-    background-color: #24344d;
+    background-color: rgba(255, 255, 255, 0.08);
     border: none;
-    border-radius: 4px;
+    border-radius: 16px;
     color: white;
     padding: 8px 4px;
     cursor: pointer;
     text-align: center;
 }
+
 
 .odd-btn:hover {
     background-color: #ffcc00;
